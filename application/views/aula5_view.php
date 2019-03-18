@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Criando views</title>
+    <title><?php echo $titulo ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <h1>Trabalhando com views</h1>
-    <p>Hoje estamos aprendendo a como trabalhar com Views.</p>
+    <h1><?php echo $titulo_pagina ?></h1>
+    <p><?php echo $conteudo ?></p>
 </body>
 </html>
