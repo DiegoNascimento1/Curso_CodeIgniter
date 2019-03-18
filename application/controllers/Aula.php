@@ -19,17 +19,17 @@ class Aula extends CI_Controller {
 		}
 	}
 
-	public function listar()
+	private function listar()
 	{
 		echo "Função listar";
 	}
 
-	public function adicionar()
+	private function adicionar()
 	{
 		echo "Função adicionar";
 	}
 	
-	public function alterar()
+	private function alterar()
 	{
 		echo "Função alterar";
 	}
