@@ -2,10 +2,10 @@
 <script>
     window.jQuery || document.write('<script src="dist/js/vendor/jquery-slim.min.js"><\/script>')
 </script>
-<script src="dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<script src="<?php echo base_url('dist/js/bootstrap.bundle.min.js')?>" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-<script src="dist/js/dashboard.js"></script>
+<script src="<?php echo base_url('dist/js/dashboard.js')?>"></script>
 </body>
 
 </html>
