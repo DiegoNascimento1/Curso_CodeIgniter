@@ -21,6 +21,9 @@ class Site extends CI_Controller {
 		//Carregar model
 		$this->load->model('livros_model', 'livros');
 
+		//Carregar o helper
+		$this->load->helper('funcoes_helper', 'funcoes');
+
 		//Carrega dados do BD
 		$data['livros'] = $this->livros->listarLivros();
 
