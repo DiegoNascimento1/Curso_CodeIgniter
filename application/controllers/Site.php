@@ -12,4 +12,20 @@ class Site extends CI_Controller {
 		$this->load->view('site/conteudo');
 		$this->load->view('layout/rodape');
 	}
+
+	public function livros(){
+
+		//titulo
+		$data['titulo']= "Lista de livros";
+
+		//Carregar model
+		$this->load->model('livros_model', 'livros');
+
+		//Carrega dados do BD
+		$data['livros'] = $this->livros->listarLivros();
+
+		$this->load->view('layout/topo', $data);
+		$this->load->view('livros/index');
+		$this->load->view('layout/rodape');
+	}
 }
