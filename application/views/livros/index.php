@@ -5,22 +5,25 @@
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome do livro</th>
-                <th scope="col">Autor</th>
+                <th scope="col">ID              </th>
+                <th scope="col">Data de Cadastro</th>
+                <th scope="col">Nome do livro   </th>
+                <th scope="col">Autor           </th>
+                <th scope="col">Preço           </th>
             </tr>
         </thead>
         <tbody>
             <?php
-
-            foreach ($livros as $livro) {
-                echo 
-                '<tr>
-                    <th scope="row">' . $livro->id .'</th>
-                    <td> '. $livro->nome_livro  .'</td>
-                    <td> '. $livro->autor_livro  .'</td>
-                </tr>';
-            }
+                foreach ($livros as $livro) {
+                    echo 
+                    '<tr>
+                        <th scope="row">' . $livro->id               .'</th>
+                        <td> '. formataDataBr($livro->data_cadastro) .'</td>
+                        <td> '. $livro->nome_livro                   .'</td>
+                        <td> '. $livro->autor_livro                  .'</td>
+                        <td> '. formataMoedaBr($livro->preco)        .'</td>
+                    </tr>';
+                }
             ?>
         </tbody>
     </table>
