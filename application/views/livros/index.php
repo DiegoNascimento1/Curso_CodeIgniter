@@ -10,6 +10,7 @@
                 <th scope="col">Nome do livro   </th>
                 <th scope="col">Autor           </th>
                 <th scope="col">Preço           </th>
+                <th scope="col">Ação           </th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@
                         <td> '. $livro->nome_livro                   .'</td>
                         <td> '. $livro->autor_livro                  .'</td>
                         <td> '. formataMoedaBr($livro->preco)        .'</td>
+                        <td> '. anchor('site/info/'. $livro->id, 'Info', array('title' => 'Mais informações', 'class' => 'btn btn-info'))       .'</td>
                     </tr>';
                 }
             ?>

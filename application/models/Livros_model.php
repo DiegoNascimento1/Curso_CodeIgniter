@@ -14,10 +14,14 @@ class Livros_model extends CI_Model {
     public function getById($id=NULL)
     {
         if ($id) {
+
+            $this->db->select('livros.*,resumo.resumo');
+            $this->db->from('livros');
+            $this->db->join('resumo', 'livros.id = resumo.id_livro', 'left');
             
-            $this->db->where('id', $id);
+            $this->db->where('livros.id', $id);
             $this->db->limit(1);
-            $query = $this->db->get('livros');
+            $query = $this->db->get();
             return $query->row();
         }
     }

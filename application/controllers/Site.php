@@ -3,6 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Site extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		//Carregar model
+		$this->load->model('livros_model', 'livros');
+
+		//Carregar o helper
+		$this->load->helper('funcoes_helper', 'funcoes');
+
+	}
 	public function index()
 	{
 		//titulo
@@ -17,12 +28,6 @@ class Site extends CI_Controller {
 
 		//titulo
 		$data['titulo']= "Lista de livros";
-
-		//Carregar model
-		$this->load->model('livros_model', 'livros');
-
-		//Carregar o helper
-		$this->load->helper('funcoes_helper', 'funcoes');
 
 		//Carrega dados do BD
 		$data['livros'] = $this->livros->listarLivros();
@@ -40,12 +45,6 @@ class Site extends CI_Controller {
 
 		} else {
 			
-			//Carregar model
-			$this->load->model('livros_model', 'livros');
-
-			//Carregar o helper
-			$this->load->helper('funcoes_helper', 'funcoes');
-
 			//Carrega dados do BD
 			$query = $this->livros->getById($id);
 
@@ -67,5 +66,24 @@ class Site extends CI_Controller {
 			
 
 		}
+	}
+
+	public function formulario()
+	{
+		
+		//titulo
+		$data['titulo'] = 'Formulário';
+
+		$this->load->view('layout/topo', $data);
+		$this->load->view('formulario/index');
+		$this->load->view('layout/rodape');
+	}
+
+	public function enviar()
+	{
+		if ($this->input->post()) {
+			echo '<pre>';
+				print_r($this->input->post());
+		}		
 	}
 }
