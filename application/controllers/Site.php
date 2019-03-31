@@ -86,4 +86,19 @@ class Site extends CI_Controller {
 				print_r($this->input->post());
 		}		
 	}
+
+	public function validar()
+	{
+		
+		//titulo
+		$data['titulo'] = 'Formulário de cadastro';
+
+		//carregamento library form_validation
+		$this->load->library('form_validation');
+
+		$this->load->view('layout/topo', $data);
+		$this->load->view('validar/index');
+		$this->load->view('layout/rodape');
+	}
+
 }
